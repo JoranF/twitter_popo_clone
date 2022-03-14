@@ -1,12 +1,11 @@
 <?php
+
 class db
 {
-
     private $db_host = 'localhost';
     private $db_user = 'root';
     private $db_pass = '';
     private $db_name = 'twitter_popo';
-
 
     public function __construct()
     {
@@ -21,7 +20,7 @@ class db
     }
 
     public function query($query, $params = [])
-    {   
+    {
         $this->db_query_pdo = $this->db_connect_pdo->prepare($query);
         $this->db_query_pdo->execute($params);
         $this->db_result = $this->db_query_pdo->fetchAll(PDO::FETCH_ASSOC);
@@ -31,5 +30,4 @@ class db
     {
         return $this->db_result;
     }
-
 }
