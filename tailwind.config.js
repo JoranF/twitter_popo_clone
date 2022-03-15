@@ -1,7 +1,8 @@
 module.exports = {
-  content: ['./public/*/*.php', ],
+  mode: "jit",
+  content: ["./public/**/*.php"],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
