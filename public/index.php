@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../css/style.css" rel="stylesheet">
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
-  <div class="container mx-auto flex justify-center">
-    <div class="grid grid-cols-2 sm:grid-cols-3 sm:w-10/12 gap-10 ">
+  <div class="container mx-auto flex justify-center ">
+    <div class="flex flex-wrap gap-10 ml-10">
       <div class="mt-1">
         <div class="flex flex-col mt-2 gap-5">
           <div class="ml-2"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8 cursor-pointer hover:bg-gray-200">
@@ -66,9 +66,9 @@
         </div>
       </div>
 
-      <div class="border-l border-r border-gray-100">
-        <div class="sticky z-3 cursor-pointer flex bg-gray-50 pb-2">
-          <div class="pl-5 pr-3 mr-5 mt-3">
+      <div class="border-l border-r border-gray-100" style="width: 35em">
+        <div class="sticky z-3 cursor-pointer flex pb-2">
+          <div class="pl-5 pr-3 mr-5 mt-5">
             <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5 content-center">
               <g>
                 <path d="M20 11H7.414l4.293-4.293c.39-.39.39-1.023 0-1.414s-1.023-.39-1.414 0l-6 6c-.39.39-.39 1.023 0 1.414l6 6c.195.195.45.293.707.293s.512-.098.707-.293c.39-.39.39-1.023 0-1.414L7.414 13H20c.553 0 1-.447 1-1s-.447-1-1-1z"></path>
@@ -76,13 +76,64 @@
             </svg>
           </div>
           <div class="flex flex-col">
-            <div class="font-medium text-xl">
+            <div class="font-bold text-xl mt-1">
               Klaas Pieterse
             </div>
             <div class="font-medium text-xs text-gray-500">
               0 Tweets
             </div>
           </div>
+        </div>
+        <div class="h-52 w-full" style="background-color: #cfd9de;"></div>
+        <div><img class="w-36 absolute -mt-16 ml-6 rounded-full border-4 border-white" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"></div>
+        <div class="flex justify-end p-4">
+          <div class="flex gap-2">
+            <div class="border rounded-full flex items-center p-2"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-5">
+                <g>
+                  <circle cx="5" cy="12" r="2"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                </g>
+              </svg></div>
+            <div><button class="bg-black p-2 rounded-full text-white font-semibold px-4 text-sm">Volgen</button></div>
+          </div>
+        </div>
+        <div class="mt-6 px-5 flex flex-col">
+          <div class="font-bold text-xl">Klaas Pieterse</div>
+          <div class="text-gray-500 text-sm">@KlaasPieterse</div>
+          <div class="flex mt-3 gap-2">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5">
+              <g>
+                <path d="M19.708 2H4.292C3.028 2 2 3.028 2 4.292v15.416C2 20.972 3.028 22 4.292 22h15.416C20.972 22 22 20.972 22 19.708V4.292C22 3.028 20.972 2 19.708 2zm.792 17.708c0 .437-.355.792-.792.792H4.292c-.437 0-.792-.355-.792-.792V6.418c0-.437.354-.79.79-.792h15.42c.436 0 .79.355.79.79V19.71z"></path>
+                <circle cx="7.032" cy="8.75" r="1.285"></circle>
+                <circle cx="7.032" cy="13.156" r="1.285"></circle>
+                <circle cx="16.968" cy="8.75" r="1.285"></circle>
+                <circle cx="16.968" cy="13.156" r="1.285"></circle>
+                <circle cx="12" cy="8.75" r="1.285"></circle>
+                <circle cx="12" cy="13.156" r="1.285"></circle>
+                <circle cx="7.032" cy="17.486" r="1.285"></circle>
+                <circle cx="12" cy="17.486" r="1.285"></circle>
+              </g>
+            </svg>
+            <div class="text-gray-600 text-sm">Lid geworden in juli 2012</div>
+          </div>
+          <div class="flex mt-3 gap-6">
+            <div class="flex">
+              <span class="font-semibold">30</span>
+              <div class="ml-1 text-gray-500">Volgend</div>
+            </div>
+            <div class="flex">
+              <span class="font-semibold">0</span>
+              <div class="ml-1 text-gray-500">Volgers</div>
+            </div>
+          </div>
+          <div class="text-gray-500 text-sm mt-3">Niet gevold door iemand die jij volgt</div>
+        </div>
+        <div class="flex w-full justify-between mt-4 text-center">
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold underline decoration-sky-500 decoration-4">Tweets</div>
+          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 transition-all text-gray-700">Tweets en antwoorden</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all text-gray-700">Media</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all text-gray-700">Vind-ik-leuks</div>
         </div>
       </div>
 
@@ -108,7 +159,7 @@
                 </g>
               </svg>
             </div>
-            <div class="flex flex-col mt-5">
+            <div class="flex flex-col">
               <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-6">
                 <div class="flex justify-between">
                   <div class="text-xs text-gray-600">Trending in Nederland</div>
@@ -121,6 +172,34 @@
                   </svg>
                 </div>
                 <div class="font-semibold">Medewerker Rusland</div>
+              </div>
+              <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-6">
+                <div class="flex justify-between">
+                  <div class="text-xs text-gray-600">Trending in Nederland</div>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5">
+                    <g>
+                      <circle cx="5" cy="12" r="2"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
+                      <circle cx="19" cy="12" r="2"></circle>
+                    </g>
+                  </svg>
+                </div>
+                <div class="font-semibold">Het OMT</div>
+                <div class="text-xs text-gray-600">1,024 Tweets</div>
+              </div>
+              <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-6">
+                <div class="flex justify-between">
+                  <div class="text-xs text-gray-600">Trending in Nederland</div>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5">
+                    <g>
+                      <circle cx="5" cy="12" r="2"></circle>
+                      <circle cx="12" cy="12" r="2"></circle>
+                      <circle cx="19" cy="12" r="2"></circle>
+                    </g>
+                  </svg>
+                </div>
+                <div class="font-semibold">McDonald</div>
+                <div class="text-xs text-gray-600">Trending with <span class="text-sky-500 hover:underline">Robje</span></div>
               </div>
               <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-6">
                 <div class="flex justify-between">
@@ -147,32 +226,7 @@
                   </svg>
                 </div>
                 <div class="font-semibold">Medewerker Rusland</div>
-              </div>
-              <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-6">
-                <div class="flex justify-between">
-                  <div class="text-xs text-gray-600">Trending in Nederland</div>
-                  <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5">
-                    <g>
-                      <circle cx="5" cy="12" r="2"></circle>
-                      <circle cx="12" cy="12" r="2"></circle>
-                      <circle cx="19" cy="12" r="2"></circle>
-                    </g>
-                  </svg>
-                </div>
-                <div class="font-semibold">Medewerker Rusland</div>
-              </div>
-              <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-6">
-                <div class="flex justify-between">
-                  <div class="text-xs text-gray-600">Trending in Nederland</div>
-                  <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5">
-                    <g>
-                      <circle cx="5" cy="12" r="2"></circle>
-                      <circle cx="12" cy="12" r="2"></circle>
-                      <circle cx="19" cy="12" r="2"></circle>
-                    </g>
-                  </svg>
-                </div>
-                <div class="font-semibold">Medewerker Rusland</div>
+                <div class="text-xs text-gray-600">2,495 Tweets</div>
               </div>
               <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 pb-4 px-6 rounded-lg">
                 <button class="text-sky-500">Laad meer</button>
@@ -180,6 +234,24 @@
             </div>
           </div>
         </div>
+
+        <div class="flex flex-wrap pt-3 px-6 text-xs text-gray-700 gap-2 w-96">
+          <a href="#" class="hover:underline">Terms of Service</a>
+          <a href="#" class="hover:underline">Privacy Policy</a>
+          <a href="#" class="hover:underline">Cookie Policy</a>
+          <a href="#" class="hover:underline">Accessibility</a>
+          <a href="#" class="hover:underline">Ads info</a>
+          <a href="#" class="hover:underline flex flex-wrap">More
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="w-3 ml-1 mt-0.5">
+              <g>
+                <circle cx="5" cy="12" r="2"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+                <circle cx="19" cy="12" r="2"></circle>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <a href="#" class="px-6 pt-1 text-xs text-gray-700 hover:underline">© 2022 Twitter, Inc.</a>
       </div>
     </div>
   </div>
