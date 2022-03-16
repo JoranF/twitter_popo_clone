@@ -53,8 +53,8 @@ function interesting(){
 }
 
 function media(){
-  echo '<div class="text-3xl font-bold">@KlaasPieterse heeft geen foto"s of video"s getweet</div>
-  <div class="text-gray-500">Wanneer ze dat wel doen, verschijnen hun media hier.</div>';
+  echo "<div class='text-3xl font-bold'>@KlaasPieterse heeft geen foto's of video's getweet</div>
+  <div class='text-gray-500'>Wanneer ze dat wel doen, verschijnen hun media hier.</div>";
 }
 
 function what_i_like(){
@@ -88,9 +88,9 @@ if(isset($_POST['what-i-like'])){
 <body>
   <div class="container mx-auto flex justify-center">
     <div class="flex flex-wrap gap-10 ml-10">
-      <div class="mt-1">
-        <div class="flex flex-col mt-2 gap-5">
-          <div class="ml-2"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8 cursor-pointer hover:bg-gray-200"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg></div>
+      <div class="mt-1 relative w-60">
+        <div class="flex flex-col mt-2 gap-5 fixed">
+          <div class="ml-2"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8 cursor-pointer hover:bg-gray-200"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z" fill="#1d9bf0"></path></g></svg></div>
           <div class="flex items-center font-base text-xl text-gray-700 gap-4 p-2 rounded-full -mt-2 hover:bg-gray-200 cursor-pointer transition-all w-52"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8"><g><path d="M22.46 7.57L12.357 2.115c-.223-.12-.49-.12-.713 0L1.543 7.57c-.364.197-.5.652-.303 1.017.135.25.394.393.66.393.12 0 .243-.03.356-.09l.815-.44L4.7 19.963c.214 1.215 1.308 2.062 2.658 2.062h9.282c1.352 0 2.445-.848 2.663-2.087l1.626-11.49.818.442c.364.193.82.06 1.017-.304.196-.363.06-.818-.304-1.016zm-4.638 12.133c-.107.606-.703.822-1.18.822H7.36c-.48 0-1.075-.216-1.178-.798L4.48 7.69 12 3.628l7.522 4.06-1.7 12.015z"></path><path d="M8.22 12.184c0 2.084 1.695 3.78 3.78 3.78s3.78-1.696 3.78-3.78-1.695-3.78-3.78-3.78-3.78 1.696-3.78 3.78zm6.06 0c0 1.258-1.022 2.28-2.28 2.28s-2.28-1.022-2.28-2.28 1.022-2.28 2.28-2.28 2.28 1.022 2.28 2.28z"></path></g></svg>Startpagina</div>
           <div class="flex items-center font-base text-xl text-gray-700 gap-4 p-2 rounded-full -mt-2 hover:bg-gray-200 cursor-pointer transition-all w-52"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8"><g><path d="M21 7.337h-3.93l.372-4.272c.036-.412-.27-.775-.682-.812-.417-.03-.776.27-.812.683l-.383 4.4h-6.32l.37-4.27c.037-.413-.27-.776-.68-.813-.42-.03-.777.27-.813.683l-.382 4.4H3.782c-.414 0-.75.337-.75.75s.336.75.75.75H7.61l-.55 6.327H3c-.414 0-.75.336-.75.75s.336.75.75.75h3.93l-.372 4.272c-.036.412.27.775.682.812l.066.003c.385 0 .712-.295.746-.686l.383-4.4h6.32l-.37 4.27c-.036.413.27.776.682.813l.066.003c.385 0 .712-.295.746-.686l.382-4.4h3.957c.413 0 .75-.337.75-.75s-.337-.75-.75-.75H16.39l.55-6.327H21c.414 0 .75-.336.75-.75s-.336-.75-.75-.75zm-6.115 7.826h-6.32l.55-6.326h6.32l-.55 6.326z"></path></g></svg>Verkennen</div>
           <div class="flex items-center font-base text-xl text-gray-700 gap-4 p-2 rounded-full -mt-2 hover:bg-gray-200 cursor-pointer transition-all w-52"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8"><g><path d="M21.697 16.468c-.02-.016-2.14-1.64-2.103-6.03.02-2.532-.812-4.782-2.347-6.335C15.872 2.71 14.01 1.94 12.005 1.93h-.013c-2.004.01-3.866.78-5.242 2.174-1.534 1.553-2.368 3.802-2.346 6.334.037 4.33-2.02 5.967-2.102 6.03-.26.193-.366.53-.265.838.102.308.39.515.712.515h4.92c.102 2.31 1.997 4.16 4.33 4.16s4.226-1.85 4.327-4.16h4.922c.322 0 .61-.206.71-.514.103-.307-.003-.645-.263-.838zM12 20.478c-1.505 0-2.73-1.177-2.828-2.658h5.656c-.1 1.48-1.323 2.66-2.828 2.66zM4.38 16.32c.74-1.132 1.548-3.028 1.524-5.896-.018-2.16.644-3.982 1.913-5.267C8.91 4.05 10.397 3.437 12 3.43c1.603.008 3.087.62 4.18 1.728 1.27 1.285 1.933 3.106 1.915 5.267-.024 2.868.785 4.765 1.525 5.896H4.38z"></path></g></svg>Meldingen</div>
@@ -99,7 +99,25 @@ if(isset($_POST['what-i-like'])){
           <div class="flex items-center font-base text-xl text-gray-700 gap-4 p-2 rounded-full -mt-2 hover:bg-gray-200 cursor-pointer transition-all w-52"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8"><g><path d="M19.75 22H4.25C3.01 22 2 20.99 2 19.75V4.25C2 3.01 3.01 2 4.25 2h15.5C20.99 2 22 3.01 22 4.25v15.5c0 1.24-1.01 2.25-2.25 2.25zM4.25 3.5c-.414 0-.75.337-.75.75v15.5c0 .413.336.75.75.75h15.5c.414 0 .75-.337.75-.75V4.25c0-.413-.336-.75-.75-.75H4.25z"></path></g></svg>Lijsten</div>
           <div class="flex items-center font-base text-xl text-gray-700 gap-4 p-2 rounded-full -mt-2 hover:bg-gray-200 cursor-pointer transition-all w-52"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8"><g><path d="M12 11.816c1.355 0 2.872-.15 3.84-1.256.814-.93 1.078-2.368.806-4.392-.38-2.825-2.117-4.512-4.646-4.512S7.734 3.343 7.354 6.17c-.272 2.022-.008 3.46.806 4.39.968 1.107 2.485 1.256 3.84 1.256zM8.84 6.368c.162-1.2.787-3.212 3.16-3.212s2.998 2.013 3.16 3.212c.207 1.55.057 2.627-.45 3.205-.455.52-1.266.743-2.71.743s-2.255-.223-2.71-.743c-.507-.578-.657-1.656-.45-3.205zm11.44 12.868c-.877-3.526-4.282-5.99-8.28-5.99s-7.403 2.464-8.28 5.99c-.172.692-.028 1.4.395 1.94.408.52 1.04.82 1.733.82h12.304c.693 0 1.325-.3 1.733-.82.424-.54.567-1.247.394-1.94zm-1.576 1.016c-.126.16-.316.246-.552.246H5.848c-.235 0-.426-.085-.552-.246-.137-.174-.18-.412-.12-.654.71-2.855 3.517-4.85 6.824-4.85s6.114 1.994 6.824 4.85c.06.242.017.48-.12.654z"></path></g></svg>Profiel</div>
           <div class="flex items-center font-base text-xl text-gray-700 gap-4 p-2 rounded-full -mt-2 hover:bg-gray-200 cursor-pointer transition-all w-52"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-8"><g><circle cx="17" cy="12" r="1.5"></circle><circle cx="12" cy="12" r="1.5"></circle><circle cx="7" cy="12" r="1.5"></circle><path d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z"></path></g></svg>Meer</div>
-          <button class="bg-sky-500 font-bold w-6/12 py-3 text-white rounded-full text-md transition-all hover:bg-sky-600 shadow-lg">Tweeten</button>
+          <button class="bg-sky-500 font-bold w-full py-3 text-white rounded-full text-md transition-all hover:bg-sky-600 shadow-lg">Tweeten</button>
+        </div>
+        <div class="fixed bottom-0 mb-3">
+        <div class="cursor-pointer hover:bg-gray-100 transition-all w-60 py-3 px-5 mt-3 rounded-full">
+          <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center">
+              <div>
+                <img class="w-12 rounded-full" src="https://www.influxdata.com/wp-content/uploads/CSGO-logo.jpg">
+              </div>
+              <div class="ml-3">
+                <div class="font-bold">John Doe</div>
+                <div class="text-sm text-gray-600">@johndoe</div>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg>
+            </div>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -132,8 +150,8 @@ if(isset($_POST['what-i-like'])){
         <div class="mt-6 px-5 flex flex-col">
             <div class="font-bold text-xl">Klaas Pieterse</div>
             <div class="text-gray-500 text-sm">@KlaasPieterse</div>
-            <div class="flex mt-3 gap-2">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5"><g><path d="M19.708 2H4.292C3.028 2 2 3.028 2 4.292v15.416C2 20.972 3.028 22 4.292 22h15.416C20.972 22 22 20.972 22 19.708V4.292C22 3.028 20.972 2 19.708 2zm.792 17.708c0 .437-.355.792-.792.792H4.292c-.437 0-.792-.355-.792-.792V6.418c0-.437.354-.79.79-.792h15.42c.436 0 .79.355.79.79V19.71z"></path><circle cx="7.032" cy="8.75" r="1.285"></circle><circle cx="7.032" cy="13.156" r="1.285"></circle><circle cx="16.968" cy="8.75" r="1.285"></circle><circle cx="16.968" cy="13.156" r="1.285"></circle><circle cx="12" cy="8.75" r="1.285"></circle><circle cx="12" cy="13.156" r="1.285"></circle><circle cx="7.032" cy="17.486" r="1.285"></circle><circle cx="12" cy="17.486" r="1.285"></circle></g></svg>
+            <div class="flex mt-3 gap-1">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5"><g><path fill="#606060" d="M19.708 2H4.292C3.028 2 2 3.028 2 4.292v15.416C2 20.972 3.028 22 4.292 22h15.416C20.972 22 22 20.972 22 19.708V4.292C22 3.028 20.972 2 19.708 2zm.792 17.708c0 .437-.355.792-.792.792H4.292c-.437 0-.792-.355-.792-.792V6.418c0-.437.354-.79.79-.792h15.42c.436 0 .79.355.79.79V19.71z"></path><circle fill="#606060" cx="7.032" cy="8.75" r="1.285"></circle><circle fill="#606060" cx="7.032" cy="13.156" r="1.285"></circle><circle fill="#606060" cx="16.968" cy="8.75" r="1.285"></circle><circle fill="#606060" cx="16.968" cy="13.156" r="1.285"></circle><circle fill="#606060" cx="12" cy="8.75" r="1.285"></circle><circle fill="#606060" cx="12" cy="13.156" r="1.285"></circle><circle fill="#606060" cx="7.032" cy="17.486" r="1.285"></circle><circle fill="#606060" cx="12" cy="17.486" r="1.285"></circle></g></svg>
               <div class="text-gray-600 text-sm">Lid geworden in juli 2012</div>
             </div>
             <div class="flex mt-3 gap-6">
@@ -142,15 +160,15 @@ if(isset($_POST['what-i-like'])){
               </div>
               <div class="flex">
                 <span class="font-semibold">0</span><div class="ml-1 text-gray-500">Volgers</div>
-              </div>
+              </div>  
             </div>
             <div class="text-gray-500 text-sm mt-3">Niet gevold door iemand die jij volgt</div>
         </div>
         <div class="flex w-full justify-between mt-4 text-center cursor-pointer border-b">
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-bold tab-button" onclick="post(this, 'tweets', 'index.php')">Tweets</div>
-          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" onclick="post(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="post(this, 'media', 'index.php')">Media</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="post(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-bold tab-button" onclick="tab_info(this, 'tweets', 'index.php')">Tweets</div>
+          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" onclick="tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="tab_info(this, 'media', 'index.php')">Media</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
         </div>
 
         <div id="post-data-outlet" class="p-2 px-4">
@@ -158,10 +176,11 @@ if(isset($_POST['what-i-like'])){
         </div>
       </div>
 
-      <div class="mt-1.5">
+      <div class="mt-1.5 relative w-96">
+        <div class="fixed">
         <div class="flex items-center">
           <div class="absolute ml-6">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="w-4"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="w-4"><g><path fill="#606060" d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
           </div>
           <input type="text" class="bg-gray-100 px-2 py-3 w-96 rounded-full outline-none focus:border-sky-500 focus:bg-white border-white border pl-14 placeholder:text-gray-500 text-sm" placeholder="Zoeken door Twitter">
         </div>
@@ -262,13 +281,6 @@ if(isset($_POST['what-i-like'])){
                   <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg>
                 </div>
                 <div class="font-semibold">Medewerker Rusland</div>
-              </div>
-              <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-6">
-                <div class="flex justify-between">
-                  <div class="text-xs text-gray-600">Trending in Nederland</div>
-                  <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5"><g><circle cx="5" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle></g></svg>
-                </div>
-                <div class="font-semibold">Medewerker Rusland</div>
                 <div class="text-xs text-gray-600">2,495 Tweets</div>
               </div>
               <div class="cursor-pointer hover:bg-gray-100 transition-all py-3 pb-4 px-6 rounded-lg">
@@ -291,11 +303,24 @@ if(isset($_POST['what-i-like'])){
         <a href="#" class="px-2 pt-1 text-xs text-gray-700 hover:underline">© 2022 Twitter, Inc.</a>
       </div>
     </div>
+    </div>
   </div>
 
   <script>
-        function post(target, data, url){
-            var elements = document.getElementsByClassName("tab-button");
+        function post(data, url, success){
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState == 4 && xhr.status == 200) {
+                    success.innerHTML = this.responseText;
+                }
+            }
+            xhr.send(data);
+        }
+
+        function tab_info(target, data, url){
+          var elements = document.getElementsByClassName("tab-button");
             for(var x = 0; x < elements.length; x++){
               if(elements[x].textContent == target.textContent){
                 if(!elements[x].className.includes("font-bold")){
@@ -309,15 +334,8 @@ if(isset($_POST['what-i-like'])){
                 }
               }
             }
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', url, true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function() {
-                if(xhr.readyState == 4 && xhr.status == 200) {
-                    document.getElementById("post-data-outlet").innerHTML = this.responseText;
-                }
-            }
-            xhr.send(data);
+
+          post(data, url, document.getElementById("post-data-outlet"))
         }
     </script>
 
