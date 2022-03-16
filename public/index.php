@@ -102,7 +102,12 @@ if(isset($_POST['what-i-like'])){
           <button class="bg-sky-500 font-bold w-full py-3 text-white rounded-full text-md transition-all hover:bg-sky-600 shadow-lg">Tweeten</button>
         </div>
         <div class="fixed bottom-0 mb-3">
-        <div class="cursor-pointer hover:bg-gray-100 transition-all w-60 py-3 px-5 mt-3 rounded-full">
+        <div class="cursor-pointer hover:bg-gray-100 transition-all w-60 py-3 px-5 mt-3 rounded-full logout-div hidden">
+          <div class="flex justify-between items-center">
+            Logout
+          </div>
+        </div>
+        <div class="cursor-pointer hover:bg-gray-100 transition-all w-60 py-3 px-5 mt-3 rounded-full" onclick="document.querySelector('.logout-div').classList.toggle('hidden')">
           <div class="flex justify-between items-center">
             <div class="flex justify-between items-center">
               <div>
@@ -165,14 +170,18 @@ if(isset($_POST['what-i-like'])){
             <div class="text-gray-500 text-sm mt-3">Niet gevold door iemand die jij volgt</div>
         </div>
         <div class="flex w-full justify-between mt-4 text-center cursor-pointer border-b">
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-bold tab-button" onclick="tab_info(this, 'tweets', 'index.php')">Tweets</div>
-          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" onclick="tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="tab_info(this, 'media', 'index.php')">Media</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-bold tab-button" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets</div>
+          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="parameter(this); tab_info(this, 'media', 'index.php')">Media</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="parameter(this); tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
         </div>
 
         <div id="post-data-outlet" class="p-2 px-4">
-          <?php interesting() ?>
+          <?php 
+            if(!isset($_GET['t'])){
+              interesting();
+            }
+          ?>
         </div>
       </div>
 
@@ -318,6 +327,16 @@ if(isset($_POST['what-i-like'])){
             }
             xhr.send(data);
         }
+
+        function parameter(target){
+          if(target != null){
+            window.history.replaceState(null, null, "?t=" + target.textContent);
+          } else {
+            var url = new URL(window.location.href);
+            console.log(url.searchParams.get("t"));
+          }
+        }
+        parameter(null)
 
         function tab_info(target, data, url){
           var elements = document.getElementsByClassName("tab-button");
