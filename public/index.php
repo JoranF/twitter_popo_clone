@@ -170,16 +170,34 @@ if(isset($_POST['what-i-like'])){
             <div class="text-gray-500 text-sm mt-3">Niet gevold door iemand die jij volgt</div>
         </div>
         <div class="flex w-full justify-between mt-4 text-center cursor-pointer border-b">
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-bold tab-button" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets</div>
-          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="parameter(this); tab_info(this, 'media', 'index.php')">Media</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" onclick="parameter(this); tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets</div>
+          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="media" onclick="parameter(this); tab_info(this, 'media', 'index.php')">Media</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="what-i-like" onclick="parameter(this); tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
         </div>
 
         <div id="post-data-outlet" class="p-2 px-4">
           <?php 
             if(!isset($_GET['t'])){
               interesting();
+            } else {
+              for($x = 0; $x < 3; $x++){
+                echo '<div class="border shadow rounded-md p-4 mt-3 w-full mx-auto">
+                <div class="animate-pulse flex space-x-4">
+                  <div class="rounded-full bg-slate-200 h-10 w-10"></div>
+                  <div class="flex-1 space-y-6 py-1">
+                    <div class="h-2 bg-slate-200 rounded"></div>
+                    <div class="space-y-3">
+                      <div class="grid grid-cols-3 gap-4">
+                        <div class="h-2 bg-slate-200 rounded col-span-2"></div>
+                        <div class="h-2 bg-slate-200 rounded col-span-1"></div>
+                      </div>
+                      <div class="h-2 bg-slate-200 rounded"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>';
+              }
             }
           ?>
         </div>
@@ -330,10 +348,30 @@ if(isset($_POST['what-i-like'])){
 
         function parameter(target){
           if(target != null){
-            window.history.replaceState(null, null, "?t=" + target.textContent);
+            if(target.textContent == "Tweets"){
+              history.replaceState && history.replaceState(
+                null, '', location.pathname + location.search.replace(/[\?&]t=[^&]+/, '').replace(/^&/, '?') + location.hash
+              );
+            } else {
+              window.history.replaceState(null, null, "?t=" + target.textContent);
+            }
           } else {
             var url = new URL(window.location.href);
-            console.log(url.searchParams.get("t"));
+            if(url.searchParams.get("t")){
+              var elements = document.getElementsByClassName("tab-button");
+              var target = "";
+              var data = "";
+              for(var x = 0; x < elements.length; x++){
+                if(elements[x].textContent == url.searchParams.get("t")){
+                  target = elements[x];
+                  data = elements[x].getAttribute('name');
+                }
+              }
+              tab_info(target, data, 'index.php');
+            } else {
+              document.getElementsByClassName("tab-button")[0].classList.remove("font-semibold")
+              document.getElementsByClassName("tab-button")[0].classList.add("font-bold")
+            }
           }
         }
         parameter(null)
