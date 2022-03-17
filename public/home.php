@@ -170,10 +170,10 @@ if(isset($_POST['what-i-like'])){
             <div class="text-gray-500 text-sm mt-3">Niet gevold door iemand die jij volgt</div>
         </div>
         <div class="flex w-full justify-between mt-4 text-center cursor-pointer border-b">
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets</div>
-          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="media" onclick="parameter(this); tab_info(this, 'media', 'index.php')">Media</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="what-i-like" onclick="parameter(this); tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'home.php')">Tweets</div>
+          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'home.php')">Tweets en antwoorden</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="media" onclick="parameter(this); tab_info(this, 'media', 'home.php')">Media</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="what-i-like" onclick="parameter(this); tab_info(this, 'what-i-like', 'home.php')">Vind-ik-leuks</div>
         </div>
 
         <div id="post-data-outlet" class="p-2 px-4">
@@ -367,7 +367,7 @@ if(isset($_POST['what-i-like'])){
                   data = elements[x].getAttribute('name');
                 }
               }
-              tab_info(target, data, 'index.php');
+              tab_info(target, data, 'home.php');
             } else {
               document.getElementsByClassName("tab-button")[0].classList.remove("font-semibold")
               document.getElementsByClassName("tab-button")[0].classList.add("font-bold")
