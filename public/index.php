@@ -55,14 +55,18 @@ function interesting()
 
 function media()
 {
-  echo "<div class='text-3xl font-bold'>@KlaasPieterse heeft geen foto's of video's getweet</div>
-  <div class='text-gray-500'>Wanneer ze dat wel doen, verschijnen hun media hier.</div>";
+  echo '<div class="w-full flex items-center flex-col">
+    <div class="text-3xl w-1/2 font-bold mt-8">@KlaasPieterse heeft geen fotos of videos getweet</div>
+    <div class="text-gray-500 mt-2 w-2/3 ml-20 pl-1">Wanneer ze dat wel doen, verschijnen hun media hier..</div>
+  </div>';
 }
 
 function what_i_like()
 {
-  echo '<div class="text-3xl font-bold">@KlaasPieterse heeft geen Tweets leuk gevonden</div>
-  <div class="text-gray-500">Wanneer ze dat wel doen, verschijnen die Tweets hier.</div>';
+  echo '<div class="w-full flex items-center flex-col">
+    <div class="text-3xl w-1/2 font-bold mt-8">@KlaasPieterse heeft geen Tweets leuk gevonden</div>
+    <div class="text-gray-500 mt-2 w-2/3 ml-20 pl-1">Wanneer ze dat wel doen, verschijnen die Tweets hier.</div>
+  </div>';
 }
 
 if (isset($_POST['tweets'])) {
@@ -85,8 +89,7 @@ if (isset($_POST['what-i-like'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
@@ -146,12 +149,36 @@ if (isset($_POST['what-i-like'])) {
           <button class="bg-sky-500 font-bold w-full py-3 text-white rounded-full text-md transition-all hover:bg-sky-600 shadow-lg">Tweeten</button>
         </div>
         <div class="fixed bottom-0 mb-3">
-          <div class="cursor-pointer hover:bg-gray-100 transition-all w-60 py-3 px-5 mt-3 rounded-full logout-div hidden">
-            <div class="flex justify-between items-center">
-              Logout
+          <div class="w-full py-3 mt-3 rounded-lg logout-div hidden shadow-lg border">
+            <div class="flex flex-col pt-2">
+              <div class="w-72 border-b border-gray-100 px-4 pb-3">
+                <div class="flex justify-between items-center">
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <img class="w-12 rounded-full" src="https://www.influxdata.com/wp-content/uploads/CSGO-logo.jpg">
+                    </div>
+                    <div class="ml-3">
+                      <div class="font-semibold">John Doe</div>
+                      <div class="text-sm text-gray-600">@johndoe</div>
+                    </div>
+                  </div>
+                  <div>
+                    <svg class="w-4" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="#1d9bf0" d="M9 20c-.264 0-.52-.104-.707-.293l-4.785-4.785c-.39-.39-.39-1.023 0-1.414s1.023-.39 1.414 0l3.946 3.945L18.075 4.41c.32-.45.94-.558 1.395-.24.45.318.56.942.24 1.394L9.817 19.577c-.17.24-.438.395-.732.42-.028.002-.057.003-.085.003z"></path>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="cursor-pointer hover:bg-gray-100 transition-all py-4 px-4">
+                <div class="text-gray-900">Voeg een account toe</div>
+              </div>
+              <a href="login.php" class="cursor-pointer hover:bg-gray-100 transition-all py-3 px-4">
+                <div style="font-size: 0.92em" class="text-gray-900">Uitloggen @KlaasPieterse</div>
+              </a>
             </div>
           </div>
-          <div class="cursor-pointer hover:bg-gray-100 transition-all w-60 py-3 px-5 mt-3 rounded-full" onclick="document.querySelector('.logout-div').classList.toggle('hidden')">
+          <div class="cursor-pointer hover:bg-gray-100 transition-all w-60 py-2 px-3 mt-3 rounded-full" onclick="document.querySelector('.logout-div').classList.toggle('hidden')">
             <div class="flex justify-between items-center">
               <div class="flex justify-between items-center">
                 <div>
@@ -190,12 +217,16 @@ if (isset($_POST['what-i-like'])) {
               Klaas Pieterse
             </div>
             <div class="font-medium text-xs text-gray-500">
-              0 Tweets
+              <span id="data-text-id"><?php if (!isset($_GET['t'])) {
+                                        echo '0 Tweets';
+                                      } else {
+                                        echo '&nbsp;';
+                                      } ?></span>
             </div>
           </div>
         </div>
-        <div class="h-52 w-full" style="background-color: #cfd9de;"></div>
-        <div><img class="w-36 absolute -mt-16 ml-6 rounded-full border-4 border-white" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"></div>
+        <div class="h-64 w-full" style="background-color: #cfd9de;"></div>
+        <div><img class="w-36 absolute -mt-20 ml-6 rounded-full border-4 border-white" src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"></div>
         <div class="flex justify-end p-4">
           <div class="flex gap-2">
             <div class="border rounded-full flex items-center p-2"><svg viewBox="0 0 24 24" aria-hidden="true" class="w-5">
@@ -208,7 +239,7 @@ if (isset($_POST['what-i-like'])) {
             <div><button class="bg-black p-2 rounded-full text-white font-semibold px-4 text-sm">Volgen</button></div>
           </div>
         </div>
-        <div class="mt-6 px-5 flex flex-col">
+        <div class="mt-3 px-5 flex flex-col">
           <div class="font-bold text-xl">Klaas Pieterse</div>
           <div class="text-gray-500 text-sm">@KlaasPieterse</div>
           <div class="flex mt-3 gap-1">
@@ -229,24 +260,26 @@ if (isset($_POST['what-i-like'])) {
           </div>
           <div class="flex mt-3 gap-6">
             <div class="flex">
-              <span class="font-semibold">30</span>
-              <div class="ml-1 text-gray-500">Volgend</div>
+              <div class="hover:underline flex cursor-pointer"><span class="font-semibold">30</span>
+                <div class="ml-1 text-gray-500">Volgend</div>
+              </div>
             </div>
             <div class="flex">
-              <span class="font-semibold">0</span>
-              <div class="ml-1 text-gray-500">Volgers</div>
+              <div class="hover:underline flex cursor-pointer"><span class="font-semibold">0</span>
+                <div class="ml-1 text-gray-500">Volgers</div>
+              </div>
             </div>
           </div>
           <div class="text-gray-500 text-sm mt-3">Niet gevold door iemand die jij volgt</div>
         </div>
         <div class="flex w-full justify-between mt-4 text-center cursor-pointer border-b">
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets</div>
-          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="media" onclick="parameter(this); tab_info(this, 'media', 'index.php')">Media</div>
-          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" name="what-i-like" onclick="parameter(this); tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" data-text="0 Tweets" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets</div>
+          <div class="whitespace-nowrap grow hover:bg-gray-100 py-4 font-semibold transition-all tab-button" data-text="0 Tweets" name="tweets" onclick="parameter(this); tab_info(this, 'tweets', 'index.php')">Tweets en antwoorden</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" data-text="0 Photos & Videos" name="media" onclick="parameter(this); tab_info(this, 'media', 'index.php')">Media</div>
+          <div class="hover:bg-gray-100 grow py-4 transition-all font-semibold tab-button" data-text="0 Likes" name="what-i-like" onclick="parameter(this); tab_info(this, 'what-i-like', 'index.php')">Vind-ik-leuks</div>
         </div>
 
-        <div id="post-data-outlet" class="p-2 px-4">
+        <div id="post-data-outlet" class="p-2 px-4 w-full">
           <?php
           if (!isset($_GET['t'])) {
             interesting();
@@ -442,70 +475,224 @@ if (isset($_POST['what-i-like'])) {
     </div>
   </div>
 
-  <script>
-    function post(data, url, success) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', url, true);
-      xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          success.innerHTML = this.responseText;
+  <div id="show-content-messages" class="fixed bottom-0 drop-shadow-xl border right-12 bg-white rounded-t-2xl duration-150 ease-in-out translate-y-[88%]" style="max-height: 50em;width: 25em;">
+    <div class="flex justify-between items-center bg-transparent">
+      <strong>
+        <h1 class="text-xl p-4">Berichten</h1>
+      </strong>
+      <div class="w-14 mr-8 gap-4 flex justify-end items-center mt-4">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <g>
+            <path d="M23.25 3.25h-2.425V.825c0-.414-.336-.75-.75-.75s-.75.336-.75.75V3.25H16.9c-.414 0-.75.336-.75.75s.336.75.75.75h2.425v2.425c0 .414.336.75.75.75s.75-.336.75-.75V4.75h2.425c.414 0 .75-.336.75-.75s-.336-.75-.75-.75zm-3.175 6.876c-.414 0-.75.336-.75.75v8.078c0 .414-.337.75-.75.75H4.095c-.412 0-.75-.336-.75-.75V8.298l6.778 4.518c.368.246.79.37 1.213.37.422 0 .844-.124 1.212-.37l4.53-3.013c.336-.223.428-.676.204-1.012-.223-.332-.675-.425-1.012-.2l-4.53 3.014c-.246.162-.563.163-.808 0l-7.586-5.06V5.5c0-.414.337-.75.75-.75h9.094c.414 0 .75-.336.75-.75s-.336-.75-.75-.75H4.096c-1.24 0-2.25 1.01-2.25 2.25v13.455c0 1.24 1.01 2.25 2.25 2.25h14.48c1.24 0 2.25-1.01 2.25-2.25v-8.078c0-.415-.337-.75-.75-.75z"></path>
+          </g>
+        </svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="hover:bg-gray-100 rounded-full" onclick="toggleMessages(this)">
+          <g>
+            <path d="M12 19.344l-8.72-8.72c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l9.25 9.25c.292.294.767.294 1.06 0l9.25-9.25c.146-.145.22-.337.22-.53s-.073-.383-.22-.53c-.293-.292-.768-.292-1.06 0L12 19.344z"></path>
+            <path d="M12 11.535l-8.72-8.72c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l9.25 9.25c.292.294.767.294 1.06 0l9.25-9.25c.146-.145.22-.337.22-.53s-.073-.383-.22-.53c-.293-.292-.768-.292-1.06 0L12 11.535z"></path>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div>
+      <div class="overflow-y-auto" style="max-height: 30em;">
+        <div class="flex justify-between my-6 border-b-2 w-full hover:bg-gray-100">
+          <h1 class="px-3 pb-3 py-2">Priveberichten</h1>
+          <div class="mr-8 mt-3">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="w-4">
+              <g>
+                <path d="M17.207 11.293l-7.5-7.5c-.39-.39-1.023-.39-1.414 0s-.39 1.023 0 1.414L15.086 12l-6.793 6.793c-.39.39-.39 1.023 0 1.414.195.195.45.293.707.293s.512-.098.707-.293l7.5-7.5c.39-.39.39-1.023 0-1.414z"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 pb-5">
+          <div class="cursor-pointer hover:bg-gray-100 transition-all px-4 py-2 py-2">
+            <div class="flex justify-between">
+              <div class="flex justify-between items-center">
+                <div>
+                  <img class="w-12 rounded-full" src="https://pbs.twimg.com/profile_images/1503591435324563456/foUrqiEw_400x400.jpg">
+                </div>
+                <div class="ml-3 ">
+                  <div class="font-bold">Elon Musk <span class="text-gray-600 font-normal ml-1">@elonmus</span></div>
+                  <div class="text-sm text-gray-600">&nbsp;</div>
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">1 uur</div>
+              </div>
+            </div>
+          </div>
+          <div class="cursor-pointer hover:bg-gray-100 transition-all px-4 py-2">
+            <div class="flex justify-between">
+              <div class="flex justify-between items-center">
+                <div>
+                  <img class="w-12 rounded-full" src="https://pbs.twimg.com/profile_images/1502460634088108039/w0tYONuk_400x400.jpg">
+                </div>
+                <div class="ml-3 ">
+                  <div class="font-bold">Snoop dogg<span class="text-gray-600 font-normal ml-1">@snoopdogg</span></div>
+                  <div class="text-sm text-gray-600">&nbsp;</div>
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">1 uur</div>
+              </div>
+            </div>
+          </div>
+          <div class="cursor-pointer hover:bg-gray-100 transition-all px-4 py-2">
+            <div class="flex justify-between">
+              <div class="flex justify-between items-center">
+                <div>
+                  <img class="w-12 rounded-full" src="https://pbs.twimg.com/profile_images/1502460634088108039/w0tYONuk_400x400.jpg">
+                </div>
+                <div class="ml-3 ">
+                  <div class="font-bold">Snoop dogg<span class="text-gray-600 font-normal ml-1">@snoopdogg</span></div>
+                  <div class="text-sm text-gray-600">&nbsp;</div>
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">1 uur</div>
+              </div>
+            </div>
+          </div>
+          <div class="cursor-pointer hover:bg-gray-100 transition-all px-4 py-2">
+            <div class="flex justify-between">
+              <div class="flex justify-between items-center">
+                <div>
+                  <img class="w-12 rounded-full" src="https://pbs.twimg.com/profile_images/1502460634088108039/w0tYONuk_400x400.jpg">
+                </div>
+                <div class="ml-3 ">
+                  <div class="font-bold">Snoop dogg<span class="text-gray-600 font-normal ml-1">@snoopdogg</span></div>
+                  <div class="text-sm text-gray-600">&nbsp;</div>
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">1 uur</div>
+              </div>
+            </div>
+          </div>
+          <div class="cursor-pointer hover:bg-gray-100 transition-all px-4 py-2">
+            <div class="flex justify-between">
+              <div class="flex justify-between items-center">
+                <div>
+                  <img class="w-12 rounded-full" src="https://pbs.twimg.com/profile_images/1502460634088108039/w0tYONuk_400x400.jpg">
+                </div>
+                <div class="ml-3 ">
+                  <div class="font-bold">Snoop dogg<span class="text-gray-600 font-normal ml-1">@snoopdogg</span></div>
+                  <div class="text-sm text-gray-600">&nbsp;</div>
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">1 uur</div>
+              </div>
+            </div>
+          </div>
+          <div class="cursor-pointer hover:bg-gray-100 transition-all px-4 py-2">
+            <div class="flex justify-between">
+              <div class="flex justify-between items-center">
+                <div>
+                  <img class="w-12 rounded-full" src="https://pbs.twimg.com/profile_images/760478349198258178/ADaMUQSF_400x400.jpg">
+                </div>
+                <div class="ml-3">
+                  <div class="font-bold">Politie Basisteam Ede</div>
+                  <div class="text-sm text-gray-600">Bedankt voor je bericht!</div>
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">1 uur</div>
+              </div>
+            </div>
+          </div>
+          <div class="cursor-pointer hover:bg-gray-100 transition-all px-4 py-2">
+            <div class="flex justify-between">
+              <div class="flex justify-between items-center">
+                <div>
+                  <img class="w-12 rounded-full" src="https://pbs.twimg.com/profile_images/760478349198258178/ADaMUQSF_400x400.jpg">
+                </div>
+                <div class="ml-3">
+                  <div class="font-bold">Politie Basisteam Ede</div>
+                  <div class="text-sm text-gray-600">Bedankt voor je bericht!</div>
+                </div>
+              </div>
+              <div>
+                <div class="text-sm text-gray-600">1 uur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function post(data, url, success) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            success.innerHTML = this.responseText;
+          }
+        }
+        xhr.send(data);
+      }
+
+      function parameter(target) {
+        if (target != null) {
+          if (target.textContent == "Tweets") {
+            history.replaceState && history.replaceState(
+              null, '', location.pathname + location.search.replace(/[\?&]t=[^&]+/, '').replace(/^&/, '?') + location.hash
+            );
+          } else {
+            window.history.replaceState(null, null, "?t=" + target.textContent);
+          }
+        } else {
+          var url = new URL(window.location.href);
+          if (url.searchParams.get("t")) {
+            var elements = document.getElementsByClassName("tab-button");
+            var target = "";
+            var data = "";
+            for (var x = 0; x < elements.length; x++) {
+              if (elements[x].textContent == url.searchParams.get("t")) {
+                target = elements[x];
+                data = elements[x].getAttribute('name');
+              }
+            }
+            setTimeout(() => {
+              tab_info(target, data, 'index.php');
+            }, 1000);
+          } else {
+            document.getElementsByClassName("tab-button")[0].classList.remove("font-semibold")
+            document.getElementsByClassName("tab-button")[0].classList.add("font-bold")
+          }
         }
       }
-      xhr.send(data);
-    }
+      parameter(null)
 
-    function parameter(target) {
-      if (target != null) {
-        if (target.textContent == "Tweets") {
-          history.replaceState && history.replaceState(
-            null, '', location.pathname + location.search.replace(/[\?&]t=[^&]+/, '').replace(/^&/, '?') + location.hash
-          );
-        } else {
-          window.history.replaceState(null, null, "?t=" + target.textContent);
-        }
-      } else {
-        var url = new URL(window.location.href);
-        if (url.searchParams.get("t")) {
-          var elements = document.getElementsByClassName("tab-button");
-          var target = "";
-          var data = "";
-          for (var x = 0; x < elements.length; x++) {
-            if (elements[x].textContent == url.searchParams.get("t")) {
-              target = elements[x];
-              data = elements[x].getAttribute('name');
+      function tab_info(target, data, url) {
+        document.getElementById("data-text-id").innerText = target.getAttribute("data-text")
+        var elements = document.getElementsByClassName("tab-button");
+        for (var x = 0; x < elements.length; x++) {
+          if (elements[x].textContent == target.textContent) {
+            if (!elements[x].className.includes("font-bold")) {
+              elements[x].classList.add("font-bold");
+              elements[x].classList.remove("font-semibold");
+            }
+          } else {
+            if (elements[x].className.includes("font-bold")) {
+              elements[x].classList.remove("font-bold");
+              elements[x].classList.add("font-semibold");
             }
           }
-          tab_info(target, data, 'index.php');
-        } else {
-          document.getElementsByClassName("tab-button")[0].classList.remove("font-semibold")
-          document.getElementsByClassName("tab-button")[0].classList.add("font-bold")
         }
-      }
-    }
-    parameter(null)
 
-    function tab_info(target, data, url) {
-      var elements = document.getElementsByClassName("tab-button");
-      for (var x = 0; x < elements.length; x++) {
-        if (elements[x].textContent == target.textContent) {
-          if (!elements[x].className.includes("font-bold")) {
-            elements[x].classList.add("font-bold");
-            elements[x].classList.remove("font-semibold");
-          }
-        } else {
-          if (elements[x].className.includes("font-bold")) {
-            elements[x].classList.remove("font-bold");
-            elements[x].classList.add("font-semibold");
-          }
-        }
+        post(data, url, document.getElementById("post-data-outlet"))
       }
 
-      post(data, url, document.getElementById("post-data-outlet"))
-    }
-  </script>
-
-  <script src="../assets/functions.js"></script>
+      function toggleMessages(target) {
+        target.classList.toggle("rotate-180")
+        document.getElementById('show-content-messages').classList.toggle('translate-y-[88%]')
+      }
+    </script>
 </body>
 
 </html>
